@@ -1,0 +1,61 @@
+{
+    
+    "user": {
+        "about-me": "Sobre mi",
+        "skill": "Habilidades",
+        "experience": {
+            "work": {
+                "title": "Experiencia de Trabajo"
+            },
+            "edu": {
+                "title": "Educacion"
+            }
+        },
+        "education": {
+            "title": "Educacion"
+        },
+        "edit": {
+            "title": "Create CV",
+            "title1": "Edit CV",
+            "title-register": "Registro",
+            "name": "Nombre",
+            "error-name": "nombre es requerido",
+            "lastname": "Apellidos",
+            "error-lastname": "debe ser Ej: Perez Garcia, ambos apellidos",
+            "email": "Correo",
+            "error-email": "formato correo incorrecto",
+            "mobile": "Telefono",
+            "github": "Github",
+            "role": "Rol",
+            "error-role": "rol es requerido",
+            "role-suggestion": "Sugerencia de Rol",
+            "desc": "Descripcion",
+            "error-desc": "tu descripcion es requerida",
+            "incorporation-disponibility": "Disponibilidad de Incorporacion",
+            "error-incorp": "disponibilidad debe ser mayor a cero",
+            "salary": "Salario",
+            "error-salary": "Salario debe ser mayor a cero",
+            "experience": "Experiencia",
+            "add-exp": "Agregar",
+            "remove-exp": "Eliminar",
+            "exp-desc": "Descripcion",
+            "education": "Educacion",
+            "techs": "Tecnologias",
+            "btn-edit": "Editar CV",
+            "btn-create": "Crear CV",
+            "err-msg": "debes rellenar algunos campos antes de editar CV",
+            "err-msg-create": "ambos campos de educacion y experiencia son requeridos ",
+            "err-msg-create2": "llena todos los campos antes de crear CV"
+        }
+       
+    },
+    "shared": {
+        "title": "Idioma",
+        "home": "Inicio",
+        "register": "Registro",
+        "edit": "Editar CV",
+        "english": "Ingles",
+        "spanish": "Español"
+    }
+    
+}

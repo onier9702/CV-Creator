@@ -1,0 +1,42 @@
+
+<div class="contenedor">
+
+    <div class="photo_div">
+        <img src="../../../assets/imgs/cartoon-cv-register.png" width="200px" height="300px" alt="cvimg">
+    </div>
+
+    <div class="register_div">
+        <form class="form" autocomplete="off" [formGroup]="myform"  (ngSubmit)="register()">
+    
+            <h4>Sign up</h4>
+            <div class="label-input">
+                <label for="username">Username</label>
+                <input class="form-control form-control-sm input" id="username" type="text" formControlName="username">
+            </div>
+    
+            <div class="label-input">
+                <label for="pass">Password</label>
+                <input class="form-control form-control-sm input" id="pass" type="password" formControlName="password">
+            </div>
+
+            <div class="label-input">
+                <label for="mobile">Mobile</label>
+                <input class="form-control form-control-sm input" id="mobile" type="tel" formControlName="mobile">
+            </div>
+    
+            <button type="submit" class="btn btn-danger btn_submit" [disabled]="myform.invalid" >Register</button>
+    
+            <div class="question">
+                <label for="">Already register ?</label>
+                <a class="ancor" href="/auth/sign-in">Go Login</a>
+            </div>
+        </form>
+    </div>
+    
+</div>
+
+<!-- <h4>Form</h4>
+<pre>{{myform.value | json}}</pre>
+
+<h5>Is invalid</h5>
+<pre>{{myform.invalid}}</pre> -->

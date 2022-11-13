@@ -1,0 +1,37 @@
+
+<div class="contenedor">
+
+    <div class="photo_div">
+        <img src="../../../assets/imgs/the_best.jpeg" width="200px" height="300px" alt="cvimg">
+    </div>
+
+    <div class="login_div">
+        <form class="form" autocomplete="off" [formGroup]="myform" (ngSubmit)="login()" >
+    
+            <h1>Sign in</h1>
+            <div class="label-input">
+                <label for="username">Username</label>
+                <input class="form-control form-control-sm input" id="username" type="text" formControlName="username" >
+            </div>
+    
+            <div class="label-input">
+                <label for="pass">Password</label>
+                <input class="form-control form-control-sm input" id="pass" type="password" formControlName="password" >
+            </div>
+    
+            <button type="submit" class="btn btn-danger btn_submit" [disabled]="myform.invalid" >Login</button>
+    
+            <div class="question">
+                <label for="">Not signed up yet ?</label>
+                <a class="ancor" href="/auth/sign-up">Go Register</a>
+            </div>
+        </form>
+    </div>
+    
+</div>
+
+<!-- <h4>Form</h4>
+<pre>{{myform.value | json}}</pre>
+
+<h5>Is invalid</h5>
+<pre>{{myform.invalid}}</pre> -->

@@ -1,0 +1,87 @@
+
+
+// Globals
+
+h2 {
+    color: #1d3557;
+    text-align: center;
+    margin: 20px 0px;
+}
+p {
+    color: black;
+}
+.imgPortrait {
+    height: 100%;
+    width: 100%;
+}
+
+// End Globals
+
+.generalHeader {
+    width: 100vw;
+
+    .title {
+        color: transparent;
+        background: linear-gradient(to right, #1d3557 0%,  #8ecae6 100% );
+        background-clip: text;
+        padding: 50px 0px;
+        text-align: center;
+        -webkit-background-clip: text;
+    }
+}
+
+.beginning {
+    display: flex;
+    flex-direction: column;
+
+    .divImgPortrait {
+        height: 250px;
+        width: 100%;
+    }
+    .divTextPortrait {
+        // background-color: #ffb4a2;
+        display: flex;
+        background-color: #8ecae6;
+        height: 250px;
+        width: 100%;
+
+        .textPortrait {
+            padding: 0px 15px;
+            // text-align: center;
+        }
+    }
+    @media (min-width: 520px) {
+        .divTextPortrait {
+            align-items: center;
+        }
+    }
+    @media (min-width: 720px) {
+        .divImgPortrait {
+            height: 350px;
+        }
+        .divTextPortrait {
+            height: 350px;
+        }
+    }
+    @media (min-width: 1020px) {
+        .divImgPortrait {
+            height: 400px;
+        }
+        .divTextPortrait {
+            height: 400px;
+        }
+    }
+}
+@media (min-width: 530px) {
+    .beginning {
+        flex-direction: row;
+
+        .divImgPortrait {
+            width: 50%;
+        }
+        .divTextPortrait {
+            width: 50%;
+        }
+    }
+
+}

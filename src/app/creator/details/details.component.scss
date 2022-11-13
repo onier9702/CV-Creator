@@ -1,0 +1,110 @@
+
+// Globals
+.gral {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-bottom: 10px;
+    width: 100%;
+    p {
+        margin: 0px 0px 0px  10px;
+    }
+}
+
+p {
+    padding-right: 15px;
+}
+
+.hr {
+    height: 1px;
+    background-color: black;
+    margin: 20px 0px;
+    width: 100%;
+}
+
+.pad-gral {
+    padding: 10px 0px 10px 10px;
+}
+
+.title {
+    color: #0077b6;
+}
+.title-left {
+    text-align: center;
+    color: #0077b6;
+}
+.title-exp-edu {
+    color: #0096c7;
+}
+.opacity {
+    color: aliceblue;
+    opacity: 0.3;
+}
+.filter-blue {
+    filter: invert(24%) sepia(61%) saturate(6206%) hue-rotate(187deg) brightness(98%) contrast(100%);
+}
+
+// End Globals
+
+.info {
+    background-color: #14213d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 30px;
+
+    .name {
+        margin-bottom: 0px;
+    }
+
+    .lastname {
+        margin-bottom: 25px;
+    }
+}
+
+.div_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0px;
+    padding: 5px 0px;
+    width: 100%;
+    .profile_photo {
+        border-radius: 100%;
+        height: 120px;
+        width: 120px;
+    }
+}
+
+.main {
+    background-color: black;
+    color: #90e0ef;
+    color: #ffff;
+    padding-top: 40px;
+}
+
+.role {
+
+    h5 {
+        text-align: center;
+    }
+}
+
+
+.divPrinter {
+    bottom: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    right: 20px;
+    position: fixed;
+    width: fit-content;
+
+    .btn_print {
+        padding: 5px;
+    }
+}
+.divPrinter:hover {
+    background-color: #ffff;
+    border-radius: 100%;
+    border: 1px solid black;
+}

@@ -1,0 +1,184 @@
+
+
+h4 {
+    color: #0096c7;
+}
+
+select {
+    background: linear-gradient(to right, #1d3557 0%,  #8ecae6 100% );
+    color: #fff;
+}
+
+textarea {
+    border-radius: 14px;
+    width: 100%;
+}
+
+.headerDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+
+    h5 {
+        padding: 0;
+        margin: 10px 0px 10px 0px;
+    }
+    p {
+        margin: 0px 0px 10px 0px;
+    }
+}
+
+form {
+    margin-top: 20px;
+
+    span {
+        color: red;
+    }
+}
+
+.mainDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+
+    .divIconBack {
+        display: flex;
+        align-items: center;
+        align-items: flex-end;
+
+        p {
+            margin: 0px 10px;
+            padding-bottom: 5px;
+        }
+        .iconBack {
+            color: #57cc99;
+            cursor: pointer;
+            font-size: 30px;
+            margin: 25px 0px 0px 10px;
+        }
+    }
+
+    .divMainBtn {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .divInput {
+            width: 100%;
+
+            input {
+                background: linear-gradient(to right, #1d3557 0%,  #8ecae6 100% );
+                color: white;
+                width: 100%;
+            }
+        }
+
+        .envolveOptions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 300px;
+        }
+
+        .btnSubmitDiv {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .btn {
+            margin-top: 30px;
+            width: 60%;
+        }
+    }
+}
+
+.answerDiv {
+    padding: 4%;
+}
+@media ( min-width: 530px ) {
+    .answerDiv {
+        padding: 5% 20%;
+    }
+}
+
+.question-text {
+    text-align: center;
+}
+
+.optionsDispDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.optDisp {
+    border-radius: 8px;
+    border: 1px solid grey;
+    cursor: pointer;
+    margin: 5px 5px;
+    padding: 5px;
+    text-align: center;
+    width: 100px;
+}
+
+.active {
+    background-color: rgb(0, 166, 255);
+}
+
+.hide {
+    display: none;
+}
+
+
+.backtoast {
+    --width: 60px;
+    --button-color: #ffffff;
+    --height: 100px;
+    --border-radius: 17px;
+}
+
+.createButton {
+    display: flex;
+    justify-content: center;
+
+    .btnCreate {
+        margin-top: 20px;
+        width: 80%;
+    }
+}
+
+// Reset Button
+.div_reset {
+    position: fixed;
+    top: 10%;
+    right: 6%;
+
+    .btnReset {
+        background-color: #4cc9f0;
+        border: none;
+        border-radius: 5px;
+        padding: 3px;
+        color: #000;
+    }
+}
+
+// Especial form
+.input_elem {
+    background: linear-gradient(to right, #1d3557 0%,  #8ecae6 100% );
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.experienceRemoveButtonDiv {
+    align-items: center;
+    margin: 12px 0px;
+
+    li {
+        margin-right: 15px;
+    }
+}
+
+

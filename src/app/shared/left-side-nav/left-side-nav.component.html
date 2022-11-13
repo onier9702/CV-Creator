@@ -1,0 +1,47 @@
+
+<!-- <header class="headerIcon" (click)="openCloseMenu()">
+    <img *ngIf="!isOpen" src="../../../assets/menu.svg" width="30px" height="30px" class="filter-red" alt="menuIcon">
+</header> -->
+
+
+<header class="iconToOpenClose" >
+    <img (click)="openCloseMenu()" *ngIf="!isOpen" src="../../../assets/svg/menu.svg" width="44px" height="44px" class="filter-red icon" alt="menuIcon">
+    <img (click)="openCloseMenu()" *ngIf="isOpen" src="../../../assets/svg/x-circle.svg" width="44px" height="44px" class="filter-red icon" alt="menuIcon">
+</header>
+
+<div class="asideDiv" #keyAside >
+    
+    <nav class="navDiv">
+        <!-- <div class="menuIconClose" (click)="openCloseMenu()">
+            <img *ngIf="!isOpen" src="../../../assets/menu.svg" width="30px" height="30px" class="filter-red" alt="menuIcon">
+        </div> -->
+    
+        <ul class="ulNav">
+            
+            <div class="divLink"
+                 *ngFor="let nav of navs, let i = index"
+                 (click)="openCloseMenu()"
+                 [routerLink]="nav.route"
+                 routerLinkActive="active" >
+                <li><img  [src]="nav.svg" class="filter-red" alt="i" role="complementary">  {{ nav.name | uppercase }}</li>
+            </div>
+        
+        </ul>
+        
+        <div class="translate">
+            <div class="icon_h6">
+                <img (click)="openCloseMenu()"  src="../../../assets/svg/translate.svg" width="40px" height="40px" class="filter-red icon" alt="menuIcon">
+                <h6>  Languages</h6>
+            </div>
+            <li class="li_language" (click)="setLang('en')" >English</li>
+            <li class="li_language" (click)="setLang('es')" >Spanish</li>
+        </div>
+    
+    </nav>
+
+    <div class="divLogo">
+        <h1 class="filter-red">OCO</h1>
+    </div>
+
+</div>
+

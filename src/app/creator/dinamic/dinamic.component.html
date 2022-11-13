@@ -1,0 +1,242 @@
+
+
+<div class="mainDiv">
+
+    <!-- <div class="divIconBack" *ngIf="showMethodPreviewQuestion">
+      <i class="bi bi-arrow-left iconBack" (click)="previewQuestion()"></i>
+      <p>Preview Question</p>
+    </div> -->
+
+    <div *ngIf="showResetButton" class="div_reset">
+      <button class="btn btnReset" (click)="reset_form()" >Reset Form</button>
+    </div>
+  
+    <form [formGroup]="myform" (ngSubmit)="submit()" autocomplete="off">
+  
+  
+      <div class="" *ngFor="let question of questionsFromDB, let i = index" >
+  
+        <!-- input answer -->
+        <div [ngClass]=" (numberAnswer === question.number) ? 'answerDiv' : 'answerDiv hide' " 
+             *ngIf="question.kind == 'input' ">
+          
+          <div class="question-text">
+            <h4>{{ i + 1 }}. {{ question.title }}</h4>
+          </div>
+          <div class="divMainBtn">
+  
+            <div class="divInput">
+              <input [type]="question.type"
+                     class="form-control input_elem"
+                     [formControlName]="i+1"
+                     [placeholder]="question.placeholder"
+              >
+            </div>
+            <div class="btnSubmitDiv">
+              <button class="btn btn-danger" [disabled]="myform.controls[i + 1].invalid" type="submit" >Submit</button>
+            </div>
+          </div>
+    
+        </div>
+    
+        <!-- select answer -->
+        <div [ngClass]=" (numberAnswer === question.number) ? 'answerDiv' : 'answerDiv hide' " 
+             *ngIf="question.kind === 'select' ">
+          
+          <div class="question-text">
+            <h4>{{ i + 1}}. {{ question.title }}</h4>
+          </div>
+  
+          <div class="divMainBtn">
+  
+            <!-- <div class="envolveOptions"> -->
+            <select class="select" [formControlName]="i + 1" >
+                <!-- <option value="Inmediately to commence to work" selected >--Select One--</option> -->
+                <option *ngFor="let opt of question.options, let ind = index" [value]="opt">{{opt}}</option>
+            </select>
+    
+            <div class="btnSubmitDiv">
+              <button class="btn btn-danger" [disabled]="myform.controls[i + 1].invalid"  type="submit" >Submit</button>
+            </div>
+  
+          </div>
+
+        </div>
+          
+        <!-- Text Area answer -->
+        <div [ngClass]=" (numberAnswer === question.number) ? 'answerDiv' : 'answerDiv hide' "
+             *ngIf="question.kind === 'textarea' ">
+
+             <div class="question-text">
+                <h4>{{ i + 1}}. {{ question.title }}</h4>
+            </div>
+
+            <div class="divMainBtn">
+
+              <textarea rows="3" [placeholder]="question.placeholder" [formControlName]="i + 1"></textarea>
+              <div class="btnSubmitDiv">
+                  <button class="btn btn-danger" [disabled]="myform.controls[i + 1].invalid"  type="submit" >Submit</button>
+              </div>
+              
+            </div>
+
+        </div>   
+        
+        <!-- especial experience form -->
+        <div [ngClass]=" (numberAnswer === question.number) ? 'answerDiv' : 'answerDiv hide' " 
+             *ngIf="question.form_name === 'experience' ">
+
+          <div class="question-text">
+              <h4>{{ i + 1}}. {{ question.title }}</h4>
+          </div>
+
+          <div class="inputAddExp">
+              <input 
+                      class="form-control input_elem"        
+                      type="text" 
+                      placeholder="add experience"
+                      [formControl]="newExperienceInput"
+              >
+  
+              <textarea rows="2"
+                      [formControl]="newExperienceDesc"
+                      placeholder="Description"
+                      class="textAreaExp back_input"
+              ></textarea>
+                <button class="btn btn-success btnAddDinamic" type="button" (click)="addExperince()">Add</button>
+          </div>
+                  
+          <!-- List of Experiences -->
+          <div class="" formArrayName="experience" >
+            <div class="newExp animate__animated animate__fadeIn"
+                *ngFor="let t of experienceArray; let i = index">
+                
+                <div class="d-flex experienceRemoveButtonDiv">
+                  <li>{{ t.input | uppercase }}</li>
+                  <button class="btn btn-danger ml-2 btnRemoveExp"
+                          type="button"
+                          (click)="removeExperince(i)"
+                  >{{ 'user.edit.remove-exp' | translate }}</button>
+                </div>
+                <p>{{ 'user.edit.exp-desc' | translate }}: {{ t.desc }}</p>
+                      
+            </div>
+          </div>
+
+          <div class="divMainBtn">
+            <div class="btnSubmitDiv">
+                <button class="btn btn-danger"  type="submit" >Submit</button>
+            </div>
+          </div>
+  
+        </div>
+
+        <!-- end especial experience form -->
+
+        <!-- especial education form -->
+        <div [ngClass]=" (numberAnswer === question.number) ? 'answerDiv' : 'answerDiv hide' " 
+             *ngIf="question.form_name === 'education' ">
+
+          <div class="question-text">
+              <h4>{{ i + 1}}. {{ question.title }}</h4>
+          </div>
+
+          <div class="inputAddExp">
+              <input 
+                      class="form-control input_elem"        
+                      type="text" 
+                      placeholder="add education"
+                      [formControl]="newEducationInput"
+              >
+  
+              <textarea rows="2"
+                      [formControl]="newEducationDesc"
+                      placeholder="Description"
+                      class="textAreaExp back_input"
+              ></textarea>
+                <button class="btn btn-success btnAddDinamic" type="button" (click)="addEducation()">Add</button>
+          </div>
+                  
+          <!-- List of Education -->
+          <div class="" formArrayName="education" >
+            <div class="newExp animate__animated animate__fadeIn"
+                *ngFor="let t of educationArray; let i = index">
+                
+                <div class="d-flex experienceRemoveButtonDiv">
+                  <li>{{ t.input | uppercase }}</li>
+                  <button class="btn btn-danger ml-2 btnRemoveExp"
+                          type="button"
+                          (click)="removeEducation(i)"
+                  >{{ 'user.edit.remove-exp' | translate }}</button>
+                </div>
+                <p>{{ 'user.edit.exp-desc' | translate }}: {{ t.desc }}</p>
+                      
+            </div>
+          </div>
+
+          <div class="divMainBtn">
+            <div class="btnSubmitDiv">
+                <button class="btn btn-danger"  type="submit" >Submit</button>
+            </div>
+          </div>
+  
+        </div>
+
+        <!-- end especial form -->
+
+        <!-- Tags -->
+        <div [ngClass]=" (numberAnswer === question.number) ? 'answerDiv' : 'answerDiv hide' " 
+             *ngIf="question.form_name === 'tag' ">
+
+          <div class="question-text">
+            <h4>{{ i + 1}}. {{ question.title }}</h4>
+          </div>
+          <div class="inputAddExp">
+              <input 
+                      class="form-control back_input"        
+                      type="text" 
+                      placeholder="add tech or aptitude"
+                      [formControl]="newTag"
+                      (keyup.enter)="addTag()"
+              >
+              <button 
+                      class="btn btn-success mt-2 mb-2 btnTag"
+                      type="button"
+                      (click)="addTag()">
+                      {{ 'user.edit.add-exp' | translate }}
+              </button>
+          </div>
+                
+            
+          <!-- List of Tags -->
+          <div class="" formArrayName="tag" >
+            <div class="d-flex m-2 newTag animate__animated animate__fadeIn"
+                *ngFor="let exp of tagArr?.controls; let i = index">
+                <input  
+                        class="form-control back_input"
+                        [formControlName]="i"
+                >
+
+                <button class="btn btn-danger btnTag"
+                        type="button"
+                        (click)="removeTag(i)"
+                >{{ 'user.edit.remove-exp' | translate }}</button>
+            </div>
+          </div>
+
+          <div class="createButton">
+            <button
+                    class="btn btn-info btnCreate"
+                    [disabled]="myform.controls['tag'].invalid"
+                    type="submit"
+            >{{ 'user.edit.btn-create' | translate }}</button>
+          </div>
+          
+        </div>
+        <!-- End tags -->
+  
+      </div>
+  
+    </form>
+    
+  </div>

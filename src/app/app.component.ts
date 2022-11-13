@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cv-creation';
+
+  supportLanguages = ['en', 'es'];
+  
+  constructor(
+    private translateService: TranslateService,
+  ) {
+
+    // Languages Settings
+    this.translateService.addLangs( this.supportLanguages );
+    this.translateService.setDefaultLang('en');
+  }
+
 }

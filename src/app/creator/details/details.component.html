@@ -1,0 +1,87 @@
+
+
+<div class="row" id="profile">
+
+    <div class="col-4 info">
+
+        <div class="div_img">
+            <img class="profile_photo" src="../../../assets/imgs/my_photo.jpeg" width="170px" height="170px" alt="my_photo">
+        </div>
+        <h4 class="name">{{ data.name }}</h4>
+        <h4 class="lastname">{{ data.lastname }}</h4>
+        <div class="email gral">
+            <img src="../../../assets/svg/svg-email.svg" width="20px" height="20px" class="filter-blue"  alt="emailIcon">
+            <p>{{ data.email }}</p>
+        </div>
+        <div class="mobile gral">
+            <img src="../../../assets/svg/mobile.svg" width="20px" height="20px" class="filter-blue"  alt="mobileIcon">
+            <p>{{ data.mobile }}</p>
+        </div>
+        <div class="github gral">
+            <img src="../../../assets/svg/globe.svg" width="20px" height="20px" class="filter-blue"  alt="githubIcon">
+            <p>{{ data.github }}</p>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="role">
+            <h5 class="title-left">Role</h5>
+            <p>* {{data.role}}</p>
+            <p *ngIf="data.suggestion">* Suggestion: {{data.suggestion}}</p>
+        </div>
+        <div class="hr"></div>
+
+        <div class="tags">
+            <h5 class="title-left">Skills</h5>
+            <ul>
+                <li *ngFor="let tag of data.tag">{{ tag }}</li>
+            </ul>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="disponibility">
+            <h5 class="title-left">Disponibility</h5>
+            <li>{{data.disponibility}}</li>
+        </div>
+
+        <div class="hr"></div>
+
+
+    </div>
+
+    <div class="col-8 main">
+
+        <div class="description pad-gral">
+            <h5 class="title">About me  ------------------------ <span></span> </h5>
+            <p class="p-general">{{data.description}}</p>
+        </div>
+
+        <div class="divExperience pad-gral">
+            <h5 class="title">Experience  ------------------------ <span></span> </h5>
+            <div *ngFor="let item of data.experience" class="divInfo">
+                <h6 class="title-exp-edu">{{ item.input | uppercase}} <span class="opacity">-project</span> </h6>
+                <p class="p-general">{{ item.desc }}</p>
+            </div>
+        </div>
+
+        <div class="divEducation pad-gral">
+            <h5 class="title">Education  ------------------------ <span></span> </h5>
+            <div *ngFor="let item of data.education" class="divInfo">
+                <h6 class="title-exp-edu">{{ item.input | uppercase}} <span class="opacity">-college</span> </h6>
+                <p class="p-general">{{ item.desc }}</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="divPrinter">
+    <img src="../../../assets/svg/printer-fill.svg" 
+    width="40px"  
+    height="40px" 
+    class="filter-blue btn_print" 
+    alt="printer"
+    (click)="printProfile()">
+</div>
