@@ -1,0 +1,106 @@
+{
+    "form": [
+
+        {
+            "number": 1,
+            "form_name": "name",
+            "title": "First Name",
+            "placeholder": "your single name",
+            "kind": "input",
+            "type": "text",
+            "options": [  ]
+        },
+        {
+            "number": 2,
+            "form_name": "lastname",
+            "title": "Lastname",
+            "placeholder": "your lasname",
+            "kind": "input",
+            "type": "text",
+            "options": [  ]
+        },
+        {
+            "number": 3,
+            "form_name": "email",
+            "title": "Email",
+            "placeholder": "your email",
+            "kind": "input",
+            "type": "email",
+            "options": [  ]
+        },
+        {
+            "number": 4,
+            "form_name": "github",
+            "title": "Github Account",
+            "placeholder": "your account of GitLab or GitHub",
+            "kind": "input",
+            "type": "text",
+            "options": [  ]
+        },
+        {
+            "number": 5,
+            "form_name": "mobile",
+            "title": "Phone",
+            "placeholder": "your telephone",
+            "kind": "input",
+            "type": "tel",
+            "options": [  ]
+        },
+        {
+            "number": 6,
+            "form_name": "role",
+            "title": "Role",
+            "placeholder": "role",
+            "kind": "input",
+            "type": "text",
+            "options": [  ]
+        },
+        {
+            "number": 7,
+            "form_name": "description",
+            "title": "Description",
+            "placeholder": "  about me",
+            "kind": "textarea",
+            "type": "text",
+            "options": [  ]
+        },
+        {
+            "number": 8,
+            "form_name": "disponibility",
+            "title": "Incorporation Disponibility",
+            "placeholder": "--Select One--",
+            "kind": "select",
+            "type": "text",
+            "options": [ "Inmediately to commence to work", "One Week to commence to work", "One Month to commence to work", "More than One Month to commence to work" ]
+        },
+        {
+            "number": 9,
+            "form_name": "experience",
+            "title": "Experience",
+            "placeholder": "Add Experience",
+            "kind": "dinamic",
+            "type": "especial",
+            "options": [  ]
+        },
+        {
+            "number": 10,
+            "form_name": "education",
+            "title": "Education",
+            "placeholder": "Add Education",
+            "kind": "dinamic",
+            "type": "especial",
+            "options": [  ]
+        },
+        {
+            "number": 11,
+            "form_name": "tag",
+            "form_name_input_list": "newExperienceInput",
+            "title": "Technologies you handle",
+            "placeholder": "Add tech or aptitude",
+            "kind": "dinamic",
+            "type": "normal",
+            "options": [  ]
+        }
+
+    ]
+}
