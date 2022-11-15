@@ -203,6 +203,7 @@ export class DinamicComponent implements OnInit {
       localStorage.setItem('createdcv', JSON.stringify(this.formQuestion));
       localStorage.setItem('position', JSON.stringify(this.numberAnswer - 1));
       // TODO: raise up a message alert of successfully CV created
+      
       this.router.navigateByUrl('/creator/details');
     }
 
