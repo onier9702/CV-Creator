@@ -1,0 +1,15 @@
+
+<div class="border"
+     [ngClass]="{'width_bord1': a_options.length === 2, 'width_bord2': a_options.length === 3}"
+>
+
+    <ul class="uList">
+        <li *ngFor="let opt of a_options, let i = index" 
+            class="option"
+            [id]="i"
+            (click)="selectOption(opt, i)"
+            [ngClass]="{'width_opt1': a_options.length === 2, 'width_opt2': a_options.length === 3}"
+        >{{ opt.label }}</li>
+    </ul>
+
+</div>

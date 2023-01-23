@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { ConfirmModalComponent } from 'src/app/shared/confirm-modal/confirm-modal.component';
 import Swal from 'sweetalert2';
 import { Form, FormWeb } from '../interfaces/form-web.interface';
 
@@ -13,7 +15,8 @@ export interface Data {
 @Component({
   selector: 'app-dinamic',
   templateUrl: './dinamic.component.html',
-  styleUrls: ['./dinamic.component.scss']
+  styleUrls: ['./dinamic.component.scss'],
+  // providers: [ConfirmModalComponent]
 })
 export class DinamicComponent implements OnInit {
 
@@ -54,7 +57,8 @@ export class DinamicComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private http: HttpClient
+    private http: HttpClient,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -198,7 +202,7 @@ export class DinamicComponent implements OnInit {
     console.log(this.formQuestion);
     this.numberAnswer += 1;
 
-    if (this.numberAnswer > (this.questionsFromDB.length - 1) ) {
+    if (this.numberAnswer > (this.questionsFromDB.length) ) {
       console.log('Form finished');
       localStorage.setItem('createdcv', JSON.stringify(this.formQuestion));
       localStorage.setItem('position', JSON.stringify(this.numberAnswer - 1));
@@ -209,34 +213,59 @@ export class DinamicComponent implements OnInit {
 
   }
 
-  reset_form(): void {
-    const swalWithBootstrapButtons = Swal.mixin({
-      customClass: {
-        confirmButton: 'btn btn-success',
-        cancelButton: 'btn btn-danger mr-2'
-      },
-      buttonsStyling: true
-    })
+  public reset_form(): void {
+    // Swal solution
+
+    // const swalWithBootstrapButtons = Swal.mixin({
+    //   customClass: {
+    //     confirmButton: 'btn btn-success',
+    //     cancelButton: 'btn btn-danger mr-2'
+    //   },
+    //   buttonsStyling: true
+    // })
     
-    swalWithBootstrapButtons.fire({
-      title: 'Are you sure?',
-      text: "You are going to reset it!",
-      icon: 'warning',
-      background: '#22333b',
-      color: '#fff',
-      showCancelButton: true,
-      confirmButtonText: 'Yes, reset it!',
-      cancelButtonText: 'No, cancel!',
-      reverseButtons: true
-    }).then((result) => {
-      if (result.isConfirmed) {
+    // swalWithBootstrapButtons.fire({
+    //   title: 'Are you sure?',
+    //   text: "You are going to reset it!",
+    //   icon: 'warning',
+    //   background: '#22333b',
+    //   color: '#fff',
+    //   showCancelButton: true,
+    //   confirmButtonText: 'Yes, reset it!',
+    //   cancelButtonText: 'No, cancel!',
+    //   reverseButtons: true
+    // }).then((result) => {
+    //   if (result.isConfirmed) {
+    //     this.numberAnswer = 1;
+    //     localStorage.setItem('position-form', JSON.stringify(1))
+    //     this.formQuestion = {};
+    //     this.myform.reset();
+    //     this.myform = this.model_form;
+    //   }
+    // })
+
+    // Mat Dialog solution
+    let dialogRef = this.dialog.open( ConfirmModalComponent, {
+      width: '420px',
+      height: '220px',
+      autoFocus: false,
+      data: 'You are going to reset form, are you sure ? '
+    } );
+
+    dialogRef.updatePosition({ top: '100px' });
+    dialogRef.afterClosed().subscribe( resp => {
+
+      if ( resp ) { // user accept
         this.numberAnswer = 1;
         localStorage.setItem('position-form', JSON.stringify(1))
         this.formQuestion = {};
         this.myform.reset();
         this.myform = this.model_form;
       }
+
     })
+
+
   }
 
 }

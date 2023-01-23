@@ -1,0 +1,22 @@
+
+<div class="block">
+    <div class="header d-flex align-items-center">
+        <div class="option_cero d-flex align-items-center"
+             [ngClass]="{'text-muted': a_placeHolder === 'Select'}"
+        >{{ a_placeHolder | titlecase }}</div>
+        <div class="div_arrow">
+            <span class="arrow" (click)="openDropdown()">
+                <i class="bi bi-caret-down-fill"></i>
+            </span>
+        </div>
+    </div>
+    <ul class="ulOptions" *ngIf="setDrop">
+        <li *ngIf="nullable" class="option" (click)="setNullOpt()">{{ nullOption.label }}</li>
+        <li *ngFor="let opt of a_options, let i = index"  
+            class="option"
+            (click)="selectOption(opt)"
+        >
+            {{ opt.label }}
+        </li>
+    </ul>
+</div>

@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-
-import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
+import { CommonsModule } from './common/common.module';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
-import { CommonsModule } from './common/common.module';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,9 @@ import { CommonsModule } from './common/common.module';
     SharedModule,
     
   ],
-  providers: [],
+  providers: [
+    // {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}} // from documentation
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

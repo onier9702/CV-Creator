@@ -8,7 +8,8 @@
     </div> -->
 
     <div *ngIf="showResetButton" class="div_reset">
-      <button class="btn btnReset" (click)="reset_form()" >Reset Form</button>
+      <!-- <button class="btn btnReset" (click)="reset_form()" >Reset Form</button> -->
+      <button mat-raised-button class="btn btn-primary" (click)="reset_form()" >Reset Form</button>
     </div>
   
     <form [formGroup]="myform" (ngSubmit)="submit()" autocomplete="off">

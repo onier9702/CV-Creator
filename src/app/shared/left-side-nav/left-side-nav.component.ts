@@ -24,8 +24,13 @@ export class LeftSideNavComponent implements OnInit {
       svg: '../../../assets/svg/house-door-fill.svg'
     },
     {
-      name: 'Make-Up CV',
+      name: 'Dinamic CV',
       route: '/creator/dinamic',
+      svg: '../../../assets/svg/sign-up.svg'
+    },
+    {
+      name: 'Basic CV',
+      route: '/creator/basic',
       svg: '../../../assets/svg/sign-up.svg'
     },
     {

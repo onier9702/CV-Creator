@@ -1,0 +1,56 @@
+
+.block {
+    background-color: #edede9;
+    border: 0.8px solid #000;
+    color: #000;
+    position: relative;
+    width: 130px;
+
+    .header {
+        cursor: pointer;
+        
+        .option_cero {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 10px;
+            height: 36px;
+            width: 100px;
+    
+            .arrow {
+                padding-right: 4px;
+            }
+        }
+    
+        .div_arrow {
+            width: 30px;
+        }
+    }
+
+
+    .ulOptions {
+        // background-color: #edede9;
+        background-color: #f9f9f5;
+        border: 0.8px solid #000;
+        list-style: none;
+        overflow-y: scroll;
+        padding: 0;
+        margin-bottom: 0;
+        height: 90px;
+        position: absolute;
+        width: 100%;
+
+        .option {
+            padding-left: 5px;
+            width: 100%;
+        }
+
+        .option:hover {
+            background-color: grey;
+            cursor: pointer;
+            color: #fff;
+        }
+
+    }
+
+
+}

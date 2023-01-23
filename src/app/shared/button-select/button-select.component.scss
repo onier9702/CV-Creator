@@ -1,0 +1,67 @@
+
+// Global
+$width_border1: 120px;
+$width_border2: 240px;
+
+.width_bord1 {
+    width: $width_border1;
+}
+.width_bord2 {
+    width: $width_border2;
+}
+
+.width_opt1 {
+    width: calc($width_border1 / 2);
+}
+.width_opt2 {
+    width: calc($width_border2 / 3);
+}
+
+.setColor {
+    background-color: #a2d2ff;
+}
+// End Global
+
+.border {
+    // background-color: #edede9;
+    // background-color: #8d99ae;
+    background-color: #eaf4f4;
+    border-radius: 15px;
+    height: 35px;
+    // width: 240px;
+
+    .uList {
+        border-radius: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+
+        .option {
+            list-style: none;
+            padding-top: 3px;
+            padding-left: 16px;
+            height: 100%;
+        }
+        .option:first-child {
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+        .option:last-child {
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        .width_opt1:hover {
+            // background-color: #a2d2ff;
+            cursor: pointer;
+        }
+        .width_opt2:hover {
+            // background-color: #a2d2ff;
+            cursor: pointer;
+        }
+    }
+}
