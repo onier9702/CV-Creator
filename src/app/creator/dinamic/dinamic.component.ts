@@ -178,7 +178,7 @@ export class DinamicComponent implements OnInit {
 
   submit(): void {
 
-    console.log('HERE: ', this.myform.value);
+    console.log('HERE on dinamic: ', this.myform.value);
     
 
     let nameOfForm = this.keys[this.numberAnswer - 1];

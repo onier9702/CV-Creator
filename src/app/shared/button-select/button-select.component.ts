@@ -10,7 +10,7 @@ import { DropdownOptions } from '../entities/dropdown-options.class';
 })
 export class ButtonSelectComponent implements OnInit {
 
-  @Input() a_options!: DropdownOptions[];
+  @Input() a_options!: DropdownOptions<any>[];
   @Input() a_formControlName!: FormControl;
   // @Input() a_default?: DropdownOptions;
   @Input() nullable?: boolean = true;        // if nullable, option "-" appear
@@ -24,12 +24,12 @@ export class ButtonSelectComponent implements OnInit {
 
   }
 
-  selectOption( opt: DropdownOptions, i: number ) {
+  selectOption( opt: DropdownOptions<any>, i: number ) {
     this.changeColorOption(i);
     this.emitValue(opt);
   }
 
-  emitValue( opt: DropdownOptions ) {
+  emitValue( opt: DropdownOptions<any> ) {
     this.newValue.emit( opt.value );
   }
 

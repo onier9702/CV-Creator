@@ -10,6 +10,8 @@ import {
 } from "@angular/animations";
 import { SelectItem, PrimeNGConfig } from "primeng/api";
 import { DropdownOptions } from '../../shared/entities/dropdown-options.class';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -21,14 +23,15 @@ export class BasicFormComponent implements OnInit {
 
   
   public basicForm!: FormGroup;
-  public tags: DropdownOptions[];
-  public buttonsSelectOptions: DropdownOptions[];
-  public buttonsSelectOptions2: DropdownOptions[];
-  public selectedTags!: DropdownOptions;
+  public tags: DropdownOptions<any>[];
+  public buttonsSelectOptions: DropdownOptions<any>[];
+  public buttonsSelectOptions2: DropdownOptions<any>[];
+  public selectedTags!: DropdownOptions<any>;
 
 
   constructor(
     private fb: FormBuilder,
+    private router: Router
   ) {
     this.tags = [ {label: 'React', value: 1}, {label: 'Angular', value: 2}, {label: 'Next', value: 3}, {label: 'NodeJs', value: 4}, {label: 'NestJs', value: 5}, {label: 'Sql', value: 6}, {label: 'Mongo DB', value: 7} ];
     this.buttonsSelectOptions = [ {label: 'No', value: 0}, {label: 'Yes', value: 1}, {label: 'Maybe', value: 2} ];
@@ -60,9 +63,17 @@ export class BasicFormComponent implements OnInit {
 
   onSubmit() {
 
-    console.log('Form: ', this.basicForm.value);
+    const data = this.basicForm.value;
+    console.log('Form: ', data);
+    if ( this.basicForm.invalid ) {
+      Swal.fire( 'Error', 'Form invalid, pease recheck', 'error');
+      return;
+    }
+    localStorage.setItem('createdcv', JSON.stringify(data));
+    // TODO: raise up a message alert of successfully CV created
+      
+    this.router.navigateByUrl('/creator/details');
     
-
   }
 
   newValue( optValue: any, formName: string ) {
@@ -80,7 +91,7 @@ export class BasicFormComponent implements OnInit {
   }
 
   getOptionForm( value: number, formName: string ) {
-    let option: DropdownOptions | undefined;
+    let option: DropdownOptions<any> | undefined;
     switch (formName) {
       case 'favorite_tech':
         option = this.tags.find( opt => opt.value === value);

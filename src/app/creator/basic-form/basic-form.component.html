@@ -93,7 +93,6 @@
                         <label class="label" for="tags">Favorite Technology</label>
                         <app-dropdown-options
                             (newValue)="newValue($event, 'favorite_tech')"
-                            [a_formControlName]="basicForm.get('favorite_tech')"
                             [a_options]="tags"
                             [nullable]="false"
                             
@@ -143,8 +142,8 @@
 
 
 
-<h3>Form Valid</h3>
+<!-- <h3>Form Valid</h3>
 <pre>{{ basicForm.valid }}</pre>
 
 <h3>Form Value</h3>
-<pre>{{ basicForm.value | json }}</pre>
+<pre>{{ basicForm.value | json }}</pre> -->

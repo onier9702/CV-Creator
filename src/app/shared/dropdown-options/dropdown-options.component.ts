@@ -9,9 +9,9 @@ import { DropdownOptions } from '../entities/dropdown-options.class';
 })
 export class DropdownOptionsComponent implements OnInit {
 
-  @Input() a_options!: DropdownOptions[];
-  @Input() a_formControlName!: FormControl;
-  @Input() a_default?: DropdownOptions;
+  @Input() a_options!: DropdownOptions<any>[];
+  @Input() a_formControlName!: FormControl<any>;
+  @Input() a_default?: DropdownOptions<any>;
   @Input() nullable?: boolean = true;        // if nullable, option "-" appear
   @Input() a_placeHolder?: any = 'Select';
 
@@ -19,7 +19,7 @@ export class DropdownOptionsComponent implements OnInit {
 
   public setDrop: boolean = false;
   public optionSelected: any;
-  public nullOption: DropdownOptions = { label: '-', value: null };
+  public nullOption: DropdownOptions<any> = { label: '-', value: null };
 
   constructor() { }
 
@@ -46,14 +46,14 @@ export class DropdownOptionsComponent implements OnInit {
     this.emitValue( this.nullOption );
   }
 
-  selectOption( opt: DropdownOptions ) {
+  selectOption( opt: DropdownOptions<any> ) {
     this.optionSelected = opt;
     this.setDrop = false;
     this.a_placeHolder = opt.label;
     this.emitValue( opt );
   }
 
-  emitValue( opt: DropdownOptions ) {
+  emitValue( opt: DropdownOptions<any> ) {
     this.newValue.emit( opt.value );
   }
 
