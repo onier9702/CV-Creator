@@ -1,32 +1,49 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray, FormControl } from '@angular/forms';
-
-import {
-  trigger,
-  state,
-  style,
-  transition,
-  animate
-} from "@angular/animations";
-import { SelectItem, PrimeNGConfig } from "primeng/api";
-import { DropdownOptions } from '../../shared/entities/dropdown-options.class';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+// import {MultiSelectModule} from 'primeng/multiselect';
 
+import { DropdownOptions } from '../../shared/entities/dropdown-options.class';
+
+interface Skill {
+  label: string,
+  value: string
+}
 
 @Component({
   selector: 'app-basic-form',
   templateUrl: './basic-form.component.html',
-  styleUrls: ['./basic-form.component.scss']
+  styleUrls: ['./basic-form.component.scss'],
+  // this is for p-multiselect from primeNg, it let me use class style 
+  // Bad Practice from angular
+  // encapsulation: ViewEncapsulation.None 
 })
 export class BasicFormComponent implements OnInit {
 
-  
+  skills: Skill[] = [ { label: 'React', value: 'React' }, 
+                      { label: 'Angular', value: 'Angular' },
+                      { label: 'NodeJs', value: 'NodeJs' }, 
+                      { label: 'Next', value: 'Next' }, 
+                      { label: 'MongoDB', value: 'MongoDB' }, 
+                      { label: 'NestJs', value: 'NestJs' }, 
+                      { label: 'SQL', value: 'SQL' }, 
+                      { label: 'HTML', value: 'HTML' }, 
+                      { label: 'CSS', value: 'CSS' }, 
+                      { label: 'SCSS', value: 'SCSS' }, 
+                      { label: 'Express', value: 'Express' }, 
+                      { label: 'Vanilla', value: 'Vanilla' }, 
+                      { label: 'JQuery', value: 'JQuery' }, 
+                    ]
+  selectedSkills!: Skill[];
+
   public basicForm!: FormGroup;
   public tags: DropdownOptions<any>[];
   public buttonsSelectOptions: DropdownOptions<any>[];
   public buttonsSelectOptions2: DropdownOptions<any>[];
   public selectedTags!: DropdownOptions<any>;
+
+  public firstRadioChecked: boolean = true;
 
 
   constructor(
@@ -51,29 +68,22 @@ export class BasicFormComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       github: new FormControl('', Validators.required  ),
       mobile: new FormControl('', Validators.required  ),
+      role: new FormControl('', Validators.required  ),
       description: new FormControl('', Validators.required  ),
       disponibility: new FormControl('', Validators.required  ),
       favorite_tech: new FormControl('', Validators.required  ),
       expMoreThanYear: new FormControl('', Validators.required  ),
-      experience: new FormArray([]),
-      education: new FormArray([]),
-      // tags: new FormControl('', [ Validators.required ])
-    })
-  }
-
-  onSubmit() {
-
-    const data = this.basicForm.value;
-    console.log('Form: ', data);
-    if ( this.basicForm.invalid ) {
-      Swal.fire( 'Error', 'Form invalid, pease recheck', 'error');
-      return;
-    }
-    localStorage.setItem('createdcv', JSON.stringify(data));
-    // TODO: raise up a message alert of successfully CV created
+      nameEdu1: new FormControl('',[]),
+      descEdu1: new FormControl('',[]),
+      nameEdu2: new FormControl('',[]),
+      descEdu2: new FormControl('',[]),
+      nameExp1: new FormControl('',[]),
+      descExp1: new FormControl('',[]),
+      nameExp2: new FormControl('',[]),
+      descExp2: new FormControl('',[]),
       
-    this.router.navigateByUrl('/creator/details');
-    
+      
+    })
   }
 
   newValue( optValue: any, formName: string ) {
@@ -108,6 +118,43 @@ export class BasicFormComponent implements OnInit {
 
     return option;
 
+  }
+
+  setCheck( opt: string ) {
+    const elemRef = document.getElementById('section_one');
+
+    if ( opt === 'second' ) {
+      elemRef?.classList.add('especial');
+      this.firstRadioChecked = false;
+    } else {
+      elemRef?.classList.remove('especial');
+      this.firstRadioChecked = true;
+    }
+    
+  }
+
+  onSubmit() {
+    const skillsSelected = this.selectedSkills.map( obj => obj.value );
+    const { nameEdu1, descEdu1, nameEdu2, descEdu2, nameExp1, descExp1, nameExp2, descExp2, ...restData } = this.basicForm.value;
+    restData.skills = skillsSelected;
+    restData.experience = [];
+    restData.education = [];
+    if ( nameEdu1 ) restData.education.push({ input: nameEdu1, desc: descEdu1 });
+    if ( nameEdu2 ) restData.education.push({ input: nameEdu2, desc: descEdu2 });
+    if ( nameExp1 ) restData.experience.push({ input: nameExp1, desc: descExp1 }); 
+    if ( nameExp2 ) restData.experience.push({ input: nameExp2, desc: descExp2 }); 
+    console.log('Form: ', restData);
+    console.log('Selected: ', this.selectedSkills);
+    
+    if ( this.basicForm.invalid ) {
+      Swal.fire( 'Error', 'Form invalid, pease recheck', 'error');
+      return;
+    }
+    localStorage.setItem('createdcv', JSON.stringify(restData));
+    // TODO: raise up a message alert of successfully CV created
+      
+    this.router.navigateByUrl('/creator/details');
+    
   }
     
 }

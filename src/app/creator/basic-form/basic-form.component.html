@@ -2,131 +2,240 @@
 <div class="container">
 
 
-    <div class="containerPpal m-5">
+    <div class="containerPpal m-3">
     
-        <div class="containerForm p-4 ml-4">
+        <div class="containerForm p-2 ml-3">
             
-            <form [formGroup]="basicForm" autocomplete="off" >
-                
-                <h5>Create CV</h5>
-    
-                <div class="row mb-1">
-                    <div class="col-sm-6 inputBlock">
-                
-                        <label class="label" for="name">Name</label>
-                        <input type="text" id="name"
-                               class="in form-control"
-                               placeholder="your name"
-                               formControlName="name"
-                        >
-                
-                    </div>
-                
-                    <div class="col-sm-6 inputBlock">
-                
-                        <label class="label" for="lastname">Lastname</label>
-                        <input type="text" id="lastname"
-                               class="in form-control"
-                               placeholder="your lastname"
-                               formControlName="lastname"
-                        >
-                
-                    </div>
-                </div>
-            
-                <div class="mb-2 inputBlock">
-                    <label class="label" for="email">Email</label>
-                    <input type="email" id="email"
-                           class="in form-control"
-                           placeholder="your email"
-                           formControlName="email"
-                    >
-                </div>
-    
-                <!-- Github-Mobile -->
-                <div class="row mb-2">
-                    <div class="col-sm-6 inputBlock">
-                        <label class="label" for="git">Github</label>
-                        <input type="text" id="git"
-                               class="in form-control"
-                               placeholder="github account"
-                               formControlName="github"
-                        >
-                    </div>
-                
-                    <div class="col-sm-6 inputBlock">
-                        <label class="label" for="mobile">Mobile</label>
-                        <input type="tel" id="mobile"
-                               class="in form-control"
-                               placeholder="telephone"
-                               formControlName="mobile"
-                        >
-                    </div>
-                </div>
-    
-                <!-- Description textarea -->
-                <div class="mb-2 inputBlock">
-                    <label class="label" for="description">Description</label>
-                    <textarea rows="1" id="description"
-                           class="in form-control"
-                           placeholder="brief description"
-                           formControlName="description"
-                    ></textarea>
-                </div>
-    
-                <!-- Disponibility-Tags -->
-                <div class="row mb-2">
-                    <div class="col-sm-6 inputBlock">
-                
-                        <label class="label" for="disp">Disponibility</label>
-                        <select class="form-control" id="disp" formControlName="disponibility">
-                            <option value="immediately to work">Immediately</option>
-                            <option value="one week to work">One Week</option>
-                            <option value="one month to work">One Month</option>
-                        </select>
+            <h5>Create CV</h5>
+            <form [formGroup]="basicForm" (ngSubmit)="onSubmit()" autocomplete="off" >
+
+                <div class="div_form">
+                    <!-- Start first Section -->
+                    <section id="section_one" class="first_section especial">
                         
-                
-                    </div>
-                
-                    <div class="col-sm-6 inputBlock">
-                
-                        <label class="label" for="tags">Favorite Technology</label>
-                        <app-dropdown-options
-                            (newValue)="newValue($event, 'favorite_tech')"
-                            [a_options]="tags"
-                            [nullable]="false"
-                            
-                        ></app-dropdown-options>
-                
-                    </div>
-                </div>
-
-                <!-- Select-Buttons -->
-                <!-- <div class="row mb-1">
-                    <label class="label" for="buttons">Select Buttons</label>
-                    <app-button-select
-                        [a_options]="buttonsSelectOptions"
-                    ></app-button-select>
-                </div> -->
-
-                <!-- Select-Buttons 2 -->
-                <div class="row mb-1">
-                    <!-- <div class="col-sm-12">
-
-                    </div> -->
-                    <label class="label" for="buttons">Year Experience(+1)</label>
-                    <app-button-select
-                        (newValue)="newValue($event, 'expMoreThanYear')"
-                        [a_options]="buttonsSelectOptions2"
-                    ></app-button-select>
-                </div>
-    
-    
-                <!-- SAVE Button -->
-                <button class="btnSubmit mt-4" (click)="onSubmit()" 
-                        [disabled]="basicForm.invalid" >Create CV</button>
-    
+                        <div class="row mb-1">
+                            <div class="col-sm-6 inputBlock">
+                        
+                                <label class="label" for="name">Name</label>
+                                <input type="text" id="name"
+                                       class="in form-control"
+                                       placeholder="your name"
+                                       formControlName="name"
+                                >
+                        
+                            </div>
+                        
+                            <div class="col-sm-6 inputBlock">
+                        
+                                <label class="label" for="lastname">Lastname</label>
+                                <input type="text" id="lastname"
+                                       class="in form-control"
+                                       placeholder="your lastname"
+                                       formControlName="lastname"
+                                >
+                        
+                            </div>
+                        </div>
+                    
+                        <div class="mb-2 inputBlock">
+                            <label class="label" for="email">Email</label>
+                            <input type="email" id="email"
+                                   class="in form-control"
+                                   placeholder="your email"
+                                   formControlName="email"
+                            >
+                        </div>
             
+                        <!-- Github-Mobile -->
+                        <div class="row mb-2">
+                            <div class="col-sm-6 inputBlock">
+                                <label class="label" for="git">Github</label>
+                                <input type="text" id="git"
+                                       class="in form-control"
+                                       placeholder="github account"
+                                       formControlName="github"
+                                >
+                            </div>
+                        
+                            <div class="col-sm-6 inputBlock">
+                                <label class="label" for="mobile">Mobile</label>
+                                <input type="tel" id="mobile"
+                                       class="in form-control"
+                                       placeholder="telephone"
+                                       formControlName="mobile"
+                                >
+                            </div>
+                        </div>
+            
+                        <!-- Description textarea -->
+                        <div class="mb-2 inputBlock">
+                            <label class="label" for="description">Description</label>
+                            <textarea rows="1" id="description"
+                                   class="in form-control"
+                                   placeholder="brief description"
+                                   formControlName="description"
+                            ></textarea>
+                        </div>
+            
+                        <!-- Disponibility-Tags -->
+                        <div class="row mb-2">
+                            <div class="col-sm-6 inputBlock">
+                        
+                                <label class="label" for="disp">Disponibility</label>
+                                <select class="form-control" id="disp" formControlName="disponibility">
+                                    <option value="immediately to work">Immediately</option>
+                                    <option value="one week to work">One Week</option>
+                                    <option value="one month to work">One Month</option>
+                                </select>
+                                
+                        
+                            </div>
+                        
+                            <div class="col-sm-6 inputBlock">
+                        
+                                <label class="label" for="tags">Favorite Technology</label>
+                                <app-dropdown-options
+                                    (newValue)="newValue($event, 'favorite_tech')"
+                                    [a_options]="tags"
+                                    [nullable]="false"
+                                    
+                                ></app-dropdown-options>
+                        
+                            </div>
+                        </div>
+        
+                        <!-- Select-Buttons -->
+                        <!-- <div class="row mb-1">
+                            <label class="label" for="buttons">Select Buttons</label>
+                            <app-button-select
+                                [a_options]="buttonsSelectOptions"
+                            ></app-button-select>
+                        </div> -->
+
+                        <div class="row mb-2">
+                            <div class="col-sm-12 inputBlock">
+                                <label class="label" for="role">Role</label>
+                                <input type="text" name="role" 
+                                       class="in form-control"
+                                       placeholder="your role"
+                                       formControlName="role">
+                            </div>
+                        </div>
+        
+                        <!-- Select-Buttons 2 -->
+                        <div class="row mb-1">
+                            <!-- <div class="col-sm-12">
+        
+                            </div> -->
+                            <label class="label" for="buttons">Year Experience(+1)</label>
+                            <app-button-select
+                                (newValue)="newValue($event, 'expMoreThanYear')"
+                                [a_options]="buttonsSelectOptions2"
+                            ></app-button-select>
+                        </div>
+                    </section>
+                   <!-- Start Sectio 2 -->
+                    <section class="second_section">
+
+                        <div class="row mb-2">
+                            <label class="label" for="edu1">Education <span class="text-muted">optional</span></label>
+                            <div class="col-sm-3 inputBlock">
+                                <input type="text" name="edu1" 
+                                    class="in form-control"
+                                    placeholder="Name College"
+                                    formControlName="nameEdu1">
+                            </div>
+                            <div class="col-sm-3 inputBlock">
+                                <input type="text" name="edu1" 
+                                    class="in form-control"
+                                    placeholder="Other College"
+                                    formControlName="nameEdu2">
+                            </div>
+                        </div>
+
+                        <div class="row mb-1">
+                            <div class="col-sm-6">
+                                <input type="text" name="edu1" 
+                                       class="in form-control"
+                                       placeholder="college description "
+                                       formControlName="descEdu1">
+                            </div>
+                        </div>
+                        <div class="row mb-1">
+                            <div class="col-sm-6">
+                                <input type="text" name="edu1" 
+                                       class="in form-control"
+                                       placeholder="college 2 description"
+                                       formControlName="descEdu2">
+                            </div>
+                        </div>
+                        <!-- Experience -->
+                        <div class="row mb-2">
+                            <label class="label" for="exp1">Experience <span class="text-muted">optional</span></label>
+                            <div class="col-sm-3 inputBlock">
+                                <input type="text" name="exp1" 
+                                    class="in form-control"
+                                    placeholder="name project"
+                                    formControlName="nameExp1">
+                            </div>
+                            <div class="col-sm-3 inputBlock">
+                                <input type="text" name="exp2" 
+                                    class="in form-control"
+                                    placeholder="other project"
+                                    formControlName="nameExp2">
+                            </div>
+                        </div>
+
+                        <div class="row mb-1">
+                            <div class="col-sm-6 inputBlock">
+                                <input type="text"
+                                   class="in form-control"
+                                   placeholder="exp description"
+                                   formControlName="descExp1">
+                            </div>
+                        </div>
+                        <div class="row mb-1">
+                            <div class="col-sm-6 inputBlock">
+                                <input type="text" 
+                                       class="in form-control"
+                                       placeholder="exp 2 description"
+                                       formControlName="descExp2">
+                            </div>
+                        </div>
+                        <!-- Skills -->
+                        <div class="row mb-1">
+                            <div class="col-sm-6 inputBlock">
+                                <label class="label" for="skills">Skills</label>
+                                <div name="skills">
+                                    <p-multiSelect [options]="skills" 
+                                                   [(ngModel)]="selectedSkills" 
+                                                   optionLabel="label"
+                                                   [ngModelOptions]="{standalone: true}"
+                                    ></p-multiSelect>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- SAVE Button -->
+                        <!-- [disabled]="basicForm.invalid"  -->
+                        <button class="btnSubmit mt-5" type="submit" 
+                        >Create CV</button>
+                    </section>
+                </div>
+
+                <div class="form-check animated fadeIn fast">
+                    <div class="circle first_check" 
+                            (click)="setCheck('first')"
+                            [ngClass]="(firstRadioChecked) ? 'bg' : '' "
+                            ></div>
+                    <div *ngIf="firstRadioChecked" class="arrow">
+                        <i class="bi bi-arrow-right pl-3"></i>
+                    </div>
+                    <div class="circle second_check" 
+                            (click)="setCheck('second')"
+                            [ngClass]="(!firstRadioChecked) ? 'bg' : '' "
+                            ></div>
+                </div>
             
             </form>
         
@@ -140,8 +249,9 @@
 
 </div>
 
+<!-- <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium corporis repellat, neque voluptatum laudantium vero a veniam doloribus tenetur nesciunt repellendus, itaque asperiores sequi nulla adipisci excepturi quam assumenda! Natus.</p> -->
 
-
+<!-- form -->
 <!-- <h3>Form Valid</h3>
 <pre>{{ basicForm.valid }}</pre>
 

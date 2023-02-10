@@ -1,19 +1,20 @@
 
 
 export interface CV {
-    name:          string;
-    lastname:      string;
-    email:         string;
-    mobile:        string;
-    github:        string;
-    role:          string;
-    suggestion:    string;
-    description:   string;
-    disponibility: number;
-    salary:        number;
-    experience:    Experience[];
-    education:     Experience[];
-    tag:           string[];
+    name:             string;
+    email:            string;
+    lastname:         string;
+    github:           string;
+    mobile:           string;
+    description:      string;
+    role:             string;
+    salary:           number;
+    suggestion:       string;
+    disponibility:    number;
+    tag:            string[];
+    skills:         string[];
+    experience: Experience[];
+    education:  Experience[];
 }
 
 export interface Experience {
