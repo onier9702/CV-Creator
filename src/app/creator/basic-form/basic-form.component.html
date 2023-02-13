@@ -11,7 +11,8 @@
 
                 <div class="div_form">
                     <!-- Start first Section -->
-                    <section id="section_one" class="first_section especial">
+                    <section id="section_one" class="first_section" 
+                             [ngClass]="{'especial': !firstRadioChecked}">
                         
                         <div class="row mb-1">
                             <div class="col-sm-6 inputBlock">
@@ -134,7 +135,7 @@
                             ></app-button-select>
                         </div>
                     </section>
-                   <!-- Start Sectio 2 -->
+                   <!-- Start Section 2 -->
                     <section class="second_section">
 
                         <div class="row mb-2">
@@ -228,7 +229,7 @@
                             (click)="setCheck('first')"
                             [ngClass]="(firstRadioChecked) ? 'bg' : '' "
                             ></div>
-                    <div *ngIf="firstRadioChecked" class="arrow">
+                    <div class="arrow">
                         <i class="bi bi-arrow-right pl-3"></i>
                     </div>
                     <div class="circle second_check" 
