@@ -73,14 +73,20 @@ export class BasicFormComponent implements OnInit {
       disponibility: new FormControl('', Validators.required  ),
       favorite_tech: new FormControl('', Validators.required  ),
       expMoreThanYear: new FormControl('', Validators.required  ),
-      nameEdu1: new FormControl('',[]),
-      descEdu1: new FormControl('',[]),
-      nameEdu2: new FormControl('',[]),
-      descEdu2: new FormControl('',[]),
+      // nameEdu1: new FormControl('',[]),
+      // descEdu1: new FormControl('',[]),
+      // nameEdu2: new FormControl('',[]),
+      // descEdu2: new FormControl('',[]),
+      linkedIn: new FormControl('', []),
+      address: new FormControl('', []),
+      age: new FormControl('', []),
+      simple_edu: new FormControl('', []),
+      degree: new FormControl('', []),
+      thesis: new FormControl('', []),
       nameExp1: new FormControl('',[]),
       descExp1: new FormControl('',[]),
       nameExp2: new FormControl('',[]),
-      descExp2: new FormControl('',[]),
+      descExp2: new FormControl('',[])
       
       
     })
@@ -135,12 +141,12 @@ export class BasicFormComponent implements OnInit {
 
   onSubmit() {
     const skillsSelected = this.selectedSkills.map( obj => obj.value );
-    const { nameEdu1, descEdu1, nameEdu2, descEdu2, nameExp1, descExp1, nameExp2, descExp2, ...restData } = this.basicForm.value;
+    const { nameExp1, descExp1, nameExp2, descExp2, ...restData } = this.basicForm.value;
     restData.skills = skillsSelected;
     restData.experience = [];
     restData.education = [];
-    if ( nameEdu1 ) restData.education.push({ input: nameEdu1, desc: descEdu1 });
-    if ( nameEdu2 ) restData.education.push({ input: nameEdu2, desc: descEdu2 });
+    // if ( nameEdu1 ) restData.education.push({ input: nameEdu1, desc: descEdu1 });
+    // if ( nameEdu2 ) restData.education.push({ input: nameEdu2, desc: descEdu2 });
     if ( nameExp1 ) restData.experience.push({ input: nameExp1, desc: descExp1 }); 
     if ( nameExp2 ) restData.experience.push({ input: nameExp2, desc: descExp2 }); 
     console.log('Form: ', restData);

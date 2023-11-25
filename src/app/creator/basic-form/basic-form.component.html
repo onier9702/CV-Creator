@@ -125,22 +125,69 @@
         
                         <!-- Select-Buttons 2 -->
                         <div class="row mb-1">
-                            <!-- <div class="col-sm-12">
-        
-                            </div> -->
-                            <label class="label" for="buttons">Year Experience(+1)</label>
-                            <app-button-select
-                                (newValue)="newValue($event, 'expMoreThanYear')"
-                                [a_options]="buttonsSelectOptions2"
-                            ></app-button-select>
+                            <div class="col-sm-6">
+                                <label class="label" for="buttons">Year Experience(+1)</label>
+                                <app-button-select
+                                    (newValue)="newValue($event, 'expMoreThanYear')"
+                                    [a_options]="buttonsSelectOptions2"
+                                ></app-button-select>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="label" for="linked">LinkedIn</label>
+                                <input type="text" name="linked" 
+                                       class="in form-control"
+                                       placeholder="your linkedIn"
+                                       formControlName="linkedIn">
+                            </div>
                         </div>
                     </section>
                    <!-- Start Section 2 -->
                     <section class="second_section">
 
                         <div class="row mb-2">
-                            <label class="label" for="edu1">Education <span class="text-muted">optional</span></label>
+                            <label class="label" for="age">Age</label>
+                            <div class="col-sm-6 inputBlock">
+                                <input type="number" name="age" 
+                                    class="in form-control"
+                                    placeholder="your age"
+                                    formControlName="age">
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <label class="label" for="edu">Education <span class="text-muted">optional</span></label>
+                            <div class="col-sm-6 inputBlock">
+                                <input type="text" name="edu" 
+                                    class="in form-control"
+                                    placeholder="name college"
+                                    formControlName="simple_edu">
+                            </div>
+                        </div>
+                        <div class="row mb-2">
                             <div class="col-sm-3 inputBlock">
+                                <label class="label" for="degree">Degree <span class="text-muted">optional</span></label>
+                                <input type="text" name="degree" 
+                                    class="in form-control"
+                                    placeholder="degree"
+                                    formControlName="degree">
+                            </div>
+                            <div class="col-sm-3 inputBlock">
+                                <label class="label" for="thesis">Thesis <span class="text-muted">optional</span></label>
+                                <input type="text" name="thesis" 
+                                    class="in form-control"
+                                    placeholder="thesis topic"
+                                    formControlName="thesis">
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-sm-6 inputBlock">
+                                <label class="label" for="address">Address <span class="text-muted">optional</span></label>
+                                <textarea rows="1" name="address" 
+                                    class="in form-control"
+                                    placeholder="address"
+                                    formControlName="address"></textarea>
+                            </div>
+                        </div>
+                            <!-- <div class="col-sm-3 inputBlock">
                                 <input type="text" name="edu1" 
                                     class="in form-control"
                                     placeholder="Name College"
@@ -169,7 +216,7 @@
                                        placeholder="college 2 description"
                                        formControlName="descEdu2">
                             </div>
-                        </div>
+                        </div> -->
                         <!-- Experience -->
                         <div class="row mb-2">
                             <label class="label" for="exp1">Experience <span class="text-muted">optional</span></label>

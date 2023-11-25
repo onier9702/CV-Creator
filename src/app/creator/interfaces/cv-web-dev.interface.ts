@@ -11,10 +11,17 @@ export interface CV {
     salary:           number;
     suggestion:       string;
     disponibility:    number;
+    age?:             number;
+    simple_edu?:      string;
+    degree?:          string;
+    thesis?:          string;
+    linkedIn?:        string;
+    linkedin?:        string;
+    address?:         string;
     tag:            string[];
     skills:         string[];
     experience: Experience[];
-    education:  Experience[];
+    education?:  Experience[];
 }
 
 export interface Experience {

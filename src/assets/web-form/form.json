@@ -39,6 +39,15 @@
         },
         {
             "number": 5,
+            "form_name": "linkedin",
+            "title": "LinkedIn Account",
+            "placeholder": "your account of linkedin",
+            "kind": "input",
+            "type": "text",
+            "options": [  ]
+        },
+        {
+            "number": 6,
             "form_name": "mobile",
             "title": "Phone",
             "placeholder": "your telephone",
@@ -47,7 +56,16 @@
             "options": [  ]
         },
         {
-            "number": 6,
+            "number": 7,
+            "form_name": "age",
+            "title": "Age",
+            "placeholder": "your age",
+            "kind": "input",
+            "type": "number",
+            "options": [  ]
+        },
+        {
+            "number": 8,
             "form_name": "role",
             "title": "Role",
             "placeholder": "role",
@@ -56,7 +74,7 @@
             "options": [  ]
         },
         {
-            "number": 7,
+            "number": 9,
             "form_name": "description",
             "title": "Description",
             "placeholder": "  about me",
@@ -65,7 +83,7 @@
             "options": [  ]
         },
         {
-            "number": 8,
+            "number": 10,
             "form_name": "disponibility",
             "title": "Incorporation Disponibility",
             "placeholder": "--Select One--",
@@ -74,7 +92,7 @@
             "options": [ "Inmediately to commence to work", "One Week to commence to work", "One Month to commence to work", "More than One Month to commence to work" ]
         },
         {
-            "number": 9,
+            "number": 11,
             "form_name": "experience",
             "title": "Experience",
             "placeholder": "Add Experience",
@@ -83,22 +101,40 @@
             "options": [  ]
         },
         {
-            "number": 10,
-            "form_name": "education",
-            "title": "Education",
-            "placeholder": "Add Education",
-            "kind": "dinamic",
-            "type": "especial",
-            "options": [  ]
-        },
-        {
-            "number": 11,
+            "number": 12,
             "form_name": "tag",
             "form_name_input_list": "newExperienceInput",
             "title": "Technologies you handle",
             "placeholder": "Add tech or aptitude",
             "kind": "dinamic",
             "type": "normal",
+            "options": [  ]
+        },
+        {
+            "number": 13,
+            "form_name": "simple_edu",
+            "title": "Education College",
+            "placeholder": "add education college",
+            "kind": "input",
+            "type": "text",
+            "options": [  ]
+        },
+        {
+            "number": 14,
+            "form_name": "degree",
+            "title": "Degree",
+            "placeholder": "add education deggre",
+            "kind": "input",
+            "type": "text",
+            "options": [  ]
+        },
+        {
+            "number": 15,
+            "form_name": "thesis",
+            "title": "Topic Thesis",
+            "placeholder": "add education thesis",
+            "kind": "input",
+            "type": "text",
             "options": [  ]
         }
 

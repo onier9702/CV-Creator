@@ -1,0 +1,55 @@
+{
+  "name": "Onier",
+  "lastname": "Crestelo Ojeda",
+  "email": "onier0217@gmail.com",
+  "github": "https://github.com/onier9702",
+  "linkedin": "https://linkedin.com/in/onier-crestelo-ojeda-513b23262",
+  "mobile": "+506 89635520",
+  "age": "26",
+  "role": "Full Stack Web Developer",
+  "description": "Hi, I'm Onier and I'm an engineer. I love to work as web developer. Open to work, learn and collaborate in any new project your company require. I hope I can help and expand your projects. All the best.\n",
+  "disponibility": "Inmediately to commence to work",
+  "experience": [
+    {
+      "input": "Dominoes-Game",
+      "desc": "Real and fun game of dominoes between two players or against the computer. Application created with React and pure JavaScript reasoning. See App in link https://onier9702.github.io/domino/"
+    },
+    {
+      "input": "Obstretic Especialist",
+      "desc": "Get an appointment and see what Especialist Luis Alonso can do for woman pregnants.Check it https://alonsomv.com"
+    },
+    {
+      "input": "Fridarte-Studio",
+      "desc": "Photography Studio business. Hosted at Hostinger with a plan with VPS (Virtual Private Server) using Ubuntu Linux. See App in link https://fridartestudio.com"
+    },
+    {
+      "input": "EIM",
+      "desc": "Environment Impact Measurement. Project where I was able to work for several months. Check Link https://jeanologia.com/eim"
+    },
+    {
+      "input": "EDATA",
+      "desc": "Project about statistics of garments machine processes. Check Project Link https://jeanologia.com/edata"
+    }
+  ],
+  "education": [
+    {
+      "input": "UCLV Universidad Central de Las Villas Martha Abreu",
+      "desc": "UCLV Universidad Central de Las Villas Martha Abreu"
+    }
+  ],
+  "tag": [
+    "Angular",
+    "NodeJs",
+    "React",
+    "MongoDB",
+    "NestJs",
+    "SQL",
+    "SCSS",
+    "HTML",
+    "Express",
+    "JavaScript"
+  ],
+  "simple_edu": "UCLV Universidad Central de Las Villas Martha Abreu",
+  "degree": "Telecommunication Engineer - degree",
+  "thesis": "Network Automation With Python"
+}

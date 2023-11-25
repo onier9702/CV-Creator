@@ -18,6 +18,9 @@
 p {
     padding-right: 15px;
 }
+.p-small {
+    font-size: 12px;
+}
 
 .hr {
     height: 1px;
@@ -27,22 +30,26 @@ p {
 }
 
 .pad-gral {
-    padding: 10px 0px 10px 10px;
+    padding: 0px 0px 20px 0px;
 }
 
 .title {
     color: #0077b6;
+    font-size: 16px;
 }
 .title-left {
     text-align: center;
     color: #0077b6;
 }
 .title-exp-edu {
-    color: #0096c7;
+    color: #000;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 0.3rem;
 }
 .opacity {
-    color: aliceblue;
-    opacity: 0.3;
+    color: #0096c7;
+    opacity: 0.9;
 }
 .filter-blue {
     filter: invert(24%) sepia(61%) saturate(6206%) hue-rotate(187deg) brightness(98%) contrast(100%);
@@ -52,6 +59,7 @@ p {
 
 .info {
     background-color: #bde0fe;
+    background-color: #f8f9fa;
     // background-color: #14213d;
     color: #000;
     display: flex;
@@ -87,7 +95,7 @@ p {
 .main {
     background-color: #fff;
     color: #000;
-    padding-top: 40px;
+    padding-top: 15px;
 }
 
 .role {
