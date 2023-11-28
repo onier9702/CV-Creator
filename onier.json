@@ -11,24 +11,36 @@
   "disponibility": "Inmediately to commence to work",
   "experience": [
     {
+      "input": "Obstretic Especialist",
+      "desc": "Get an appointment and see what Especialist Luis Alonso can help woman pregnants and more.Check it https://alonsomv.com"
+    },
+    {
+      "input": "Fridarte-Studio",
+      "desc": "Photography Studio business. Get the photos you dream. See App in link https://fridartestudio.com"
+    },
+    {
+      "input": "Barber-Shop",
+      "desc": "Get an appoinment and cut off your hair with some clicks. See App in link https://barberiarn.com"
+    },
+    {
       "input": "Dominoes-Game",
       "desc": "Real and fun game of dominoes between two players or against the computer. Application created with React and pure JavaScript reasoning. See App in link https://onier9702.github.io/domino/"
     },
     {
-      "input": "Obstretic Especialist",
-      "desc": "Get an appointment and see what Especialist Luis Alonso can do for woman pregnants.Check it https://alonsomv.com"
+      "input": "Dominoes-Notebook",
+      "desc": "Handling statistics from a group of friends playing dominoes. As a database I use Firebase. See App in link https://onier9702.github.io/dominoes-firebase"
     },
     {
-      "input": "Fridarte-Studio",
-      "desc": "Photography Studio business. Hosted at Hostinger with a plan with VPS (Virtual Private Server) using Ubuntu Linux. See App in link https://fridartestudio.com"
+      "input": "CV-Creator",
+      "desc": "Create your Web Developer CV on desktop screen. Built with Angular. See App in link https://onier-cv-creator.netlify.app/"
     },
     {
       "input": "EIM",
       "desc": "Environment Impact Measurement. Project where I was able to work for several months. Check Link https://jeanologia.com/eim"
     },
     {
-      "input": "EDATA",
-      "desc": "Project about statistics of garments machine processes. Check Project Link https://jeanologia.com/edata"
+      "input": "ERP",
+      "desc": "Enterprise Resource Planning (ERP). Project created with symfony PHP. Take control of internal resources of the company."
     }
   ],
   "education": [
@@ -38,18 +50,21 @@
     }
   ],
   "tag": [
+    "JavaScript",
     "Angular",
-    "NodeJs",
     "React",
-    "MongoDB",
-    "NestJs",
-    "SQL",
-    "SCSS",
-    "HTML",
+    "Docker",
+    "NodeJs",
     "Express",
-    "JavaScript"
+    "NestJs",
+    "MongoDB",
+    "MySQL",
+    "Symfony",
+    "Vanilla",
+    "SCSS",
+    "HTML"
   ],
   "simple_edu": "UCLV Universidad Central de Las Villas Martha Abreu",
-  "degree": "Telecommunication Engineer - degree",
+  "degree": "Telecommunication Engineer",
   "thesis": "Network Automation With Python"
 }
